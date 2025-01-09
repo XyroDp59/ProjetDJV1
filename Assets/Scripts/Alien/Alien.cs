@@ -12,6 +12,7 @@ public abstract class Alien : MonoBehaviour
     [SerializeField] float spawnVelocity = 10f;
     [SerializeField] MilkyHeal heal;
     [SerializeField] int healRarity = 2;
+    [SerializeField] public GameObject boomEffect;
     protected NavMeshAgent agent;
     public static int Score = 0;
 

@@ -5,6 +5,7 @@ public class SpaceShip : MonoBehaviour
 {
     [Header("Wave Parameters")]
     public static int Wave = 0;
+    [SerializeField] private GameObject boomEffect;
     [SerializeField] public HealthSystem health;
     private bool isAlive;
     [SerializeField] float betweenWaveDelay = 5f;
@@ -76,7 +77,7 @@ public class SpaceShip : MonoBehaviour
         Wave += 1;
         HUD.singleton.Wave.text = "Wave : " + Wave;
         isAlive = false;
-        //TODO : play death animation
+        boomEffect.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
         spawnCooldown *= spawnAccelerationCoeff;
         speed *= movingAccelerationCoeff;
@@ -88,6 +89,7 @@ public class SpaceShip : MonoBehaviour
             Debug.Log("start waiting");
             yield return respawnDelay;
             Debug.Log("start behaving");
+            boomEffect.SetActive(false);
             Behave();
         }
     }

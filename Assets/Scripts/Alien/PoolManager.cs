@@ -54,16 +54,23 @@ public class PoolManager : MonoBehaviour
 
         killedAliens.Add(alien); activeAliens.Remove(alien);
         alien.gameObject.SetActive(false);
+
+        StartCoroutine(BoomCoroutine());
+        IEnumerator BoomCoroutine(){
+            alien.boomEffect.transform.parent = alien.transform.parent;
+            alien.boomEffect.SetActive(true);
+            yield return new WaitForSeconds(0.5f);
+            alien.boomEffect.SetActive(false);
+            alien.boomEffect.transform.parent = alien.transform;
+        }
     }
 
     public void KillAllAliens()
     {
-        foreach(Alien alien in activeAliens)
+        while(activeAliens.Count > 0)
         {
-            killedAliens.Add(alien);
-            alien.gameObject.SetActive(false);
+            KillAlien(activeAliens[0]);
         }
-        activeAliens.Clear();
     }
 
 }
