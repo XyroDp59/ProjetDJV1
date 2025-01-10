@@ -1,8 +1,5 @@
 using System.Collections;
-using System.Drawing;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class AlienShooter : Alien
 {
@@ -10,8 +7,6 @@ public class AlienShooter : Alien
     [SerializeField] private float cooldown = 2;
     [SerializeField] private int maxDistance = 30;
     [SerializeField] private GameObject shootEffect;
-
-    bool isActivated = false;
 
     public override IEnumerator Behave()
     {

@@ -1,13 +1,11 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class AlienKidnapper : Alien
 {
     Cow kidnapTarget;
     float kidnapValue = -1f;
     [SerializeField] public float MaxKidnapValue = 1f;
-    [SerializeField] private float MaxKidnapValueDelta = 1f;
 
     [SerializeField] private GameObject kidnapEffect;
 

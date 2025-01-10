@@ -1,8 +1,6 @@
-using System;
-using System.Collections;
-using Unity.VisualScripting;
+
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 [RequireComponent (typeof(HealthSystem))]
 public class Player : MonoBehaviour
@@ -86,7 +84,7 @@ public class Player : MonoBehaviour
             }
 
             //Start spinning
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetKey(KeyCode.LeftControl))
             {
                 spin = 0.5f;
                 anim.SetTrigger("Spin");
