@@ -41,7 +41,6 @@ public class SpaceShip : MonoBehaviour
         transform.position = initialPos;
         isAlive = true;
         transform.GetChild(0).gameObject.SetActive(true);
-        //TODO : play spawn Spaceship animation
 
         target = transform.position;
         StartCoroutine(GoToTarget());
@@ -79,7 +78,7 @@ public class SpaceShip : MonoBehaviour
         isAlive = false;
         boomEffect.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
-        PoolManager.instance.KillAllAliens();
+        //PoolManager.instance.KillAllAliens();
 
         spawnCooldown *= spawnAccelerationCoeff;
         speed *= movingAccelerationCoeff;

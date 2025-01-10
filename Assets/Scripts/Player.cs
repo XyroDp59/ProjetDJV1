@@ -76,7 +76,11 @@ public class Player : MonoBehaviour
                 vy -= 9.81f * Time.deltaTime;
             }
 
-            
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Application.Quit();
+            }
+
 
             if (Input.GetMouseButtonDown(0))
             {
