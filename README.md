@@ -11,7 +11,7 @@ Pour combler ce maanque, et pour vous prouver ma bonne foi, l'ordre dans lequel 
 - Puisque l'on aurait beaucoup d'ennemis, plutôt que de faire apparaître un ennemi à la fois, j'ai décider de partir sur une pool, contenant une cinquantaine d'Alien.
 - Les Alien tout comme le joueur et le vaisseau sont régis par une quantité de point de vie, et peuvent prendre des dégats : j'ai créé un script HealthSystem, permettant d'alléger leur 3 scripts, et éviter un copier coller. Je n'avais pas encore fait d'UI donc il n'y avait pas encore les barres de vies.
 - J'ai écrit le script Harmful Projectile : il est nommé ainsi plutôt que bullet, car j'avais comme intention de mettre plusieurs types d'armes pour le joueur. Cette idée a été abandonnée.
-( En raison de divers projets impérieux et partiels, je n'ai pas travaillé sur le projet entre la semaine avant les vacances et le 05 Janvier )
+En raison de divers projets impérieux et partiels, je n'ai pas travaillé sur le projet entre la semaine avant les vacances et le 05 Janvier
 - J'ai créé le prefab des Alien Kidnappeurs : il fallait donc créer leur script. Il a donc fallu aussi créer les particules du kidnapping, et les vaches et leur script de mort. J'ai eu quelques problèmes à bien positionner les particules lors du kidnapping. 
 - J'ai enfin créé le script de déplacement et saut du joueur. Cela n'a pas posé de problème, si ce n'est pour le tir des balles : il fallait faire en sorte qu'elles sortent du canon, mais visent le point au centre de l'écran. En m'inspirant du script pour déplacer le joueur à la souris que l'on avait fait dans les TPs, j'ai pu récupérer ce point.
 - J'ai dessiné l'arène. Je l'ai un peu retravaillé les jours qui ont suivi, pour la rendre plus agréable (par exemple en créant des murs invisibles à ses bords), mais en gardant la même base.
@@ -22,8 +22,6 @@ Pour combler ce maanque, et pour vous prouver ma bonne foi, l'ordre dans lequel 
 - J'ai fini le HUD en ajoutant des scores pour la mort des ennemis, le nombre de vagues, et le nombre de vaches (nos amis) encore en vie.
 - J'ai ajouté un Game-Over, qui peut être déclenché par la mort du joueur, ou par la mort de la dernière vache.
 - Ayant toujours le problème de la caméra passant à travers les murs, j'ai ajouté une fonction de zoom à celle-ci : la caméra essaiera de se mettre en première personne si elle n'arrive pas à voir le joueur à l'écran.
-
-- Création du Git et initial commit
-
+Création du Git et initial commit
 - Ajout de la scène écran titre
-- envoi du projet
+Envoi du projet
