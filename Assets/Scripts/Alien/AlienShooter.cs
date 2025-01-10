@@ -57,7 +57,6 @@ public class AlienShooter : Alien
 
     private void Shoot(HarmfulProjectile bullet)
     {
-        Debug.Log("SHOOT");
         Vector3 bulletPos = bullet.transform.position;
 
         HarmfulProjectile b = Instantiate(bullet, bulletPos, bullet.transform.rotation);

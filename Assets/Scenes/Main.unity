@@ -6701,7 +6701,7 @@ PrefabInstance:
       objectReference: {fileID: 1787010171}
     - target: {fileID: 6610929245949978, guid: d6ec66d9427ddf242b01a708461aa706, type: 3}
       propertyPath: maxHealth
-      value: 15
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1948623364104782839, guid: d6ec66d9427ddf242b01a708461aa706, type: 3}
       propertyPath: m_IsTrigger

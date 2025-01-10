@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
     float speed;
     float vy;
     Vector3 dir;
+    Vector3 bulletDir;
+
 
     [SerializeField] private HealthSystem healthSystem;
     CharacterController controller;
@@ -45,6 +47,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 d = Look();
+        if (Vector3.Dot(d, transform.forward) > 0) bulletDir = d;
+        Mesh.transform.LookAt(transform.position+5*d);
+
+
         dir = Vector3.zero;
         if (spin <= 0f)
         {
@@ -97,29 +104,33 @@ public class Player : MonoBehaviour
         controller.Move((dir + vy * Vector3.up) * speed * Time.deltaTime);
         if (spin > -2f) spin -= Time.deltaTime;
     }
-
-    private void Shoot(HarmfulProjectile bullet)
+    
+    private Vector3 Look()
     {
         Vector3 bulletPos = bullet.transform.position;
-
-        HarmfulProjectile b = Instantiate(bullet, bulletPos, bullet.transform.rotation);
-
         RaycastHit hit;
-        var ray = _mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2,Screen.height /2));
         Vector3 dir;
+        var ray = _mainCamera.ScreenPointToRay(new Vector3(Screen.width / 2, Screen.height / 2));
         if (Physics.Raycast(ray, out hit))
         {
             Vector3 objectHit = hit.point;
 
             dir = objectHit - bulletPos;
-        } else
+        }
+        else
         {
             dir = transform.forward;
         }
+        return dir;
+    }
+    
 
-        b.direction = dir.normalized;
+    private void Shoot(HarmfulProjectile bullet)
+    {
+        HarmfulProjectile b = Instantiate(bullet, bullet.transform.position, bullet.transform.rotation);
+
+        b.direction = bulletDir.normalized;
         b.gameObject.SetActive(true);
-
     }
 
     public void Die()

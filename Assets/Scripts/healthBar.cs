@@ -10,7 +10,6 @@ public class HealthBar : MonoBehaviour
     public void UpdateFill(float f)
     {
         fill.anchorMax = new Vector2 (f, 1);
-        Debug.Log(f);
     }
     // Update is called once per frame
     void Update()

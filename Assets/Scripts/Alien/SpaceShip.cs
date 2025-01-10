@@ -79,16 +79,17 @@ public class SpaceShip : MonoBehaviour
         isAlive = false;
         boomEffect.SetActive(true);
         transform.GetChild(0).gameObject.SetActive(false);
-        spawnCooldown *= spawnAccelerationCoeff;
-        speed *= movingAccelerationCoeff;
-        StartCoroutine(myCoroutine());
         PoolManager.instance.KillAllAliens();
 
+        spawnCooldown *= spawnAccelerationCoeff;
+        speed *= movingAccelerationCoeff;
+        health.maxHealth += 2;
+        health.addHealth(health.maxHealth);
+
+        StartCoroutine(myCoroutine());
         IEnumerator myCoroutine()
         {
-            Debug.Log("start waiting");
             yield return respawnDelay;
-            Debug.Log("start behaving");
             boomEffect.SetActive(false);
             Behave();
         }
